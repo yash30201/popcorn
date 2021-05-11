@@ -12,7 +12,12 @@ class PopStyles {
         headline1: TextStyle(
           fontSize: 32,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Color(0xffbc6ff1),
+        ),
+        headline2: TextStyle(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: Color(0xffbc6ff1),
         ),
         bodyText1: TextStyle(
             fontSize: 14,

@@ -23,16 +23,13 @@ class _HomeState extends State<Home> {
               elevation: 5.0,
               title: Text(
                 'POPCORN',
-                style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).accentColor),
+                style: Theme.of(context).textTheme.headline1,
               ),
               actions: [
                 Container(
                   padding: EdgeInsets.all(5),
                   child: InkWell(
-                    onTap: () => {},
+                    onTap: () => {Navigator.pushNamed(context, '/search')},
                     child: Icon(
                       Icons.search,
                       size: 36,

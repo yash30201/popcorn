@@ -9,16 +9,16 @@ class CarouselLarge extends StatefulWidget {
 
 class _CarouselLargeState extends State<CarouselLarge> {
   PageController _pageController;
-  var movies = [];
 
   @override
   void initState() {
     super.initState();
-    movies = MockData.movieslandscape;
-    _pageController = PageController(initialPage: 1, viewportFraction: 0.8);
+    _pageController = PageController(
+        initialPage: landscapeContents.length - 1, viewportFraction: 0.8);
   }
 
   _movieSelector(int index) {
+    var indexNormalised = index % landscapeContents.length;
     return AnimatedBuilder(
       animation: _pageController,
       builder: (BuildContext context, Widget widget) {
@@ -36,12 +36,10 @@ class _CarouselLargeState extends State<CarouselLarge> {
         );
       },
       child: GestureDetector(
-        // onTap: () => Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (_) => MovieScreen(movie: movies[index]),
-        //   ),
-        // ),
+        onTap: () {
+          Navigator.pushNamed(context, '/contentPage',
+              arguments: landscapeContents[indexNormalised]);
+        },
         child: Stack(
           children: <Widget>[
             Center(
@@ -53,11 +51,12 @@ class _CarouselLargeState extends State<CarouselLarge> {
                 ),
                 child: Center(
                   child: Hero(
-                    tag: movies[index][0],
+                    tag: landscapeContents[indexNormalised].posterUrl,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image(
-                        image: AssetImage(movies[index][0]),
+                        image: AssetImage(
+                            landscapeContents[indexNormalised].posterUrl),
                         height: 220.0,
                         fit: BoxFit.cover,
                       ),
@@ -75,7 +74,7 @@ class _CarouselLargeState extends State<CarouselLarge> {
                   color: Theme.of(context).primaryColor.withOpacity(0.5),
                   padding: EdgeInsets.all(8),
                   child: Text(
-                    movies[index][1].toUpperCase(),
+                    landscapeContents[indexNormalised].title.toUpperCase(),
                     style: Theme.of(context).textTheme.headline4,
                   ),
                 ),
@@ -91,7 +90,6 @@ class _CarouselLargeState extends State<CarouselLarge> {
   Widget build(BuildContext context) {
     return PageView.builder(
       controller: _pageController,
-      itemCount: movies.length,
       itemBuilder: (context, index) {
         return _movieSelector(index);
       },
