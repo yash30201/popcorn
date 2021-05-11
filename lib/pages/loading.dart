@@ -14,8 +14,8 @@ class _LoaderState extends State<Loader> {
     if (prefs.containsKey('username')) {
       // Means user is already logged in and has auth token, so we can bypass login
       Navigator.pushReplacementNamed(context, '/home');
-    }
-    Navigator.pushReplacementNamed(context, '/signup');
+    } else
+      Navigator.pushReplacementNamed(context, '/signup');
   }
 
   @override
