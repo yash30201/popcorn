@@ -8,6 +8,7 @@ class PopStyles {
       accentColor: Color(0xffbc6ff1),
       backgroundColor: Color(0xff000000),
       fontFamily: 'Georgia',
+      splashColor: Color(0xffbc6ff1).withOpacity(0.5),
       textTheme: TextTheme(
         headline1: TextStyle(
           fontSize: 32,
@@ -20,10 +21,11 @@ class PopStyles {
           color: Color(0xffbc6ff1),
         ),
         bodyText1: TextStyle(
-            fontSize: 14,
-            fontFamily: 'Roboto',
-            fontWeight: FontWeight.bold,
-            color: Colors.white),
+          fontSize: 14,
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
         bodyText2: TextStyle(
           fontSize: 22,
           fontFamily: 'Roboto',
@@ -38,6 +40,17 @@ class PopStyles {
           fontSize: 20,
           fontWeight: FontWeight.bold,
           color: Colors.white,
+        ),
+        headline5: TextStyle(
+          fontSize: 20,
+          fontFamily: 'Roboto',
+          color: Colors.white54,
+        ),
+        headline6: TextStyle(
+          fontSize: 20,
+          fontFamily: 'Roboto',
+          color: Colors.white70,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

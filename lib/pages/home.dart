@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:popcorn/constants/MockData.dart';
 import 'package:popcorn/widgets/CarouselLarge.dart';
 import 'package:popcorn/widgets/carouselSmall.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,9 +10,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void logUser() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.containsKey('username')) {
+      String username = prefs.get('username');
+      print('Hi ' + username + ' !\nWelcome to Popcorn.');
+    } else
+      print('No username found in shared preferences');
+  }
+
   @override
   void initState() {
     super.initState();
+    logUser();
   }
 
   @override
@@ -41,10 +52,13 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap: () => {},
-                    child: CircleAvatar(
-                      backgroundColor: Colors.amberAccent,
-                      radius: 18,
+                    onTap: () => Navigator.pushNamed(context, '/profile'),
+                    child: Hero(
+                      tag: 'ProfilePhotoAnimatorHeroTag',
+                      child: CircleAvatar(
+                        backgroundColor: Colors.amberAccent,
+                        radius: 18,
+                      ),
                     ),
                   ),
                 ),

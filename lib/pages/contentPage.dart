@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:popcorn/models/Content.dart';
 import 'package:popcorn/widgets/LandScapeClipper.dart';
 import 'package:popcorn/widgets/ScreenShotsView.dart';
+import 'package:share/share.dart';
 
 class ContentPage extends StatefulWidget {
   @override
@@ -132,7 +133,13 @@ class _ContentPageState extends State<ContentPage> {
                               color: Colors.white,
                               size: iconsSize,
                             ),
-                            onTap: () {},
+                            onTap: () {
+                              Share.share(
+                                  'Watch this amazing movie on Popcorn!\n' +
+                                      content.title.toUpperCase() +
+                                      ' - ' +
+                                      content.posterUrl);
+                            },
                           ),
                         ),
                       ],
