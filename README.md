@@ -28,5 +28,13 @@ In Home screen, we can browse through titles in the infinitely repeating carouse
 + ContentPage custom clipper user a customclipper to create that particular shape then paints it with shadow using custompainter and embeds the child on that shape.
 
 ## Screenshots and previews  
---- | --- | ---
-![](readmeAssets/apphome.gif) | ![](readmeAssets/login.png) | ![](readmeAssets/signup.png)
+
+![](readmeAssets/apphome.gif) 
+
+<br/>
+
+![](readmeAssets/login.png)
+
+<br/>
+
+![](readmeAssets/signup.png)
