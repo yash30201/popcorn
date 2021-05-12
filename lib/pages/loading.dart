@@ -10,12 +10,12 @@ class Loader extends StatefulWidget {
 
 class _LoaderState extends State<Loader> {
   void checkPageToDisplay() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.containsKey('username')) {
-      // Means user is already logged in and has auth token, so we can bypass login
-      Navigator.pushReplacementNamed(context, '/home');
-    } else
-      Navigator.pushReplacementNamed(context, '/signup');
+    // SharedPreferences prefs = await SharedPreferences.getInstance();
+    // if (prefs.containsKey('username')) {
+    //   // Means user is already logged in and has auth token, so we can bypass login
+    //   Navigator.pushReplacementNamed(context, '/home');
+    // } else
+    Navigator.pushReplacementNamed(context, '/signup');
   }
 
   @override
