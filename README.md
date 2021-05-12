@@ -27,4 +27,6 @@ In Home screen, we can browse through titles in the infinitely repeating carouse
 + Carousel large is implemented like this. It return a pageview.builder which returns a animation builder. In animation builder, builder returns an animated sized box which hosts the child image.
 + ContentPage custom clipper user a customclipper to create that particular shape then paints it with shadow using custompainter and embeds the child on that shape.
 
-![](readmeAssets/apphome.mp4)
+## Screenshots and previews  
+--- | --- | ---
+![](readmeAssets/apphome.gif) | ![](readmeAssets/login.png) | ![](readmeAssets/signup.png)
